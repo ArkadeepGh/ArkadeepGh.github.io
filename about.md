@@ -14,9 +14,18 @@ Hi! I am Arkadeep Ghosh, currently an undergraduate student in the [Department o
 I am a statistics and probability enthusiast, with interests in certain topics in Mathematics like Number Theory and Combinatorics.
 
 
-### Elsewhere
+<div class="social-links">
 
-- [Linkedin](www.linkedin.com/in/arkadeep-ghosh-5928a637a)
-- [Email](mailto:arkadeepghosh399@gmail.com)
+<a href="https://www.linkedin.com/in/YOUR-USERNAME/" target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-linkedin-in"></i>
+</a>
 
-</article>
+<a href="https://github.com/YOUR-USERNAME/" target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-github"></i>
+</a>
+
+<a href="mailto:YOUR-EMAIL@example.com">
+  <i class="fa-solid fa-envelope"></i>
+</a>
+
+</div>
