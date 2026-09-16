@@ -1,0 +1,352 @@
+---
+---
+
+/* =========================================================================
+   Tokens
+   ========================================================================= */
+:root {
+  --paper:   #f7f7f3;
+  --ink:     #15181d;
+  --muted:   #5c6470;
+  --rule:    #dcdcd2;
+  --accent:  #27407c;
+  --mark:    #f0ecd8;
+
+  --serif: "Spectral", Charter, "Iowan Old Style", Georgia, serif;
+  --mono:  "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --measure: 34rem;      /* ~68 characters of Spectral */
+  --gutter:  clamp(1.25rem, 5vw, 3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:  #14161a;
+    --ink:    #e6e5df;
+    --muted:  #98a0ad;
+    --rule:   #2c3037;
+    --accent: #9db4ea;
+    --mark:   #2a2b21;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 var(--gutter) 5rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  font-variant-numeric: oldstyle-numeric;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================================
+   Skip link + focus
+   ========================================================================= */
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: var(--gutter);
+  top: 0.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 0.75rem;
+  z-index: 10;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =========================================================================
+   Masthead
+   ========================================================================= */
+.masthead {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2.5rem 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.wordmark {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.masthead nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.masthead nav a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.masthead nav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
+
+/* =========================================================================
+   Main column
+   ========================================================================= */
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.intro {
+  padding: 3rem 0 2.5rem;
+}
+
+.intro h1 {
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 0.9rem;
+  letter-spacing: -0.012em;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* Density curve: the one flourish on the page. */
+.curve {
+  display: block;
+  width: 100%;
+  height: 46px;
+  margin: 2rem 0 0;
+  overflow: visible;
+}
+.curve path.fill { fill: var(--mark); }
+.curve path.line { fill: none; stroke: var(--rule); stroke-width: 1.25; }
+.curve line      { stroke: var(--rule); stroke-width: 1; }
+
+/* =========================================================================
+   Post list
+   ========================================================================= */
+.archive { list-style: none; margin: 0; padding: 0; }
+
+.archive li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.archive h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.archive h2 a { color: var(--ink); text-decoration: none; }
+.archive h2 a:hover { color: var(--accent); }
+
+.archive time {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.35rem;
+}
+
+.archive p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* Hang the dates in the left margin once there's room for it. */
+@media (min-width: 62rem) {
+  .archive li {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    column-gap: 2rem;
+  }
+  .archive time {
+    grid-row: 1 / span 3;
+    margin: 0.35rem 0 0;
+    text-align: right;
+  }
+  .archive h2, .archive p { grid-column: 2; }
+}
+
+/* =========================================================================
+   Post body
+   ========================================================================= */
+.post-head { padding: 3rem 0 1.5rem; }
+
+.post-head h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.012em;
+}
+
+.post-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tag {
+  margin-left: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.post h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.75rem;
+  line-height: 1.35;
+}
+
+.post h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+}
+
+.post p { margin: 0 0 1.15rem; }
+
+.post a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+.post ul, .post ol { padding-left: 1.3rem; margin: 0 0 1.15rem; }
+.post li { margin-bottom: 0.4rem; }
+
+.post blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.post hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+/* Theorem-style callouts */
+.theorem, .proof, .definition {
+  margin: 1.5rem 0;
+  padding: 1rem 1.15rem;
+  border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--mark) 55%, transparent);
+}
+.theorem::before, .definition::before, .proof::before {
+  display: block;
+  font-weight: 600;
+  font-style: normal;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+.theorem::before    { content: "Theorem"; }
+.definition::before { content: "Definition"; }
+.proof {
+  border-left-color: var(--rule);
+  background: none;
+  padding-left: 1.1rem;
+}
+.proof::before { content: "Proof"; font-style: italic; font-weight: 500; }
+.proof > :last-child::after { content: " \25A1"; }
+
+/* Code */
+code, kbd, samp {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: color-mix(in srgb, var(--rule) 40%, transparent);
+  padding: 0.12em 0.34em;
+  border-radius: 2px;
+}
+
+pre {
+  font-family: var(--mono);
+  font-size: 0.83rem;
+  line-height: 1.6;
+  background: color-mix(in srgb, var(--rule) 28%, transparent);
+  padding: 1rem 1.1rem;
+  border-radius: 3px;
+  overflow-x: auto;
+}
+pre code { background: none; padding: 0; font-size: inherit; }
+
+/* Tables */
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 1.5rem 0;
+  font-variant-numeric: tabular-nums;
+}
+.post th, .post td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.post th { font-weight: 600; border-bottom-width: 1.5px; }
+
+.post img { max-width: 100%; height: auto; }
+
+/* Long display equations scroll rather than break the column */
+mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35rem 0;
+}
+
+/* =========================================================================
+   Post navigation + colophon
+   ========================================================================= */
+.post-nav {
+  max-width: var(--measure);
+  margin: 3rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+.post-nav a { color: var(--muted); text-decoration: none; max-width: 45%; }
+.post-nav a:hover { color: var(--ink); }
+.post-nav .next { margin-left: auto; text-align: right; }
+
+.colophon {
+  max-width: var(--measure);
+  margin: 4rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.colophon p { margin: 0 0 0.35rem; }
+.colophon a { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

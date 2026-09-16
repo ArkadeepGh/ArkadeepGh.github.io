@@ -1,0 +1,25 @@
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'ams',
+      macros: {
+        E: ['\\mathbb{E}\\left[#1\\right]', 1],
+        Var: ['\\operatorname{Var}\\left(#1\\right)', 1],
+        Cov: ['\\operatorname{Cov}\\left(#1,#2\\right)', 2],
+        Prob: ['\\mathbb{P}\\left(#1\\right)', 1],
+        R: '\\mathbb{R}',
+        N: '\\mathbb{N}',
+        indep: '\\perp\\!\\!\\!\\perp',
+        iid: '\\overset{\\text{iid}}{\\sim}',
+        dto: '\\xrightarrow{\\ d\\ }',
+        pto: '\\xrightarrow{\\ p\\ }'
+      }
+    },
+    chtml: { scale: 1.0 },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>

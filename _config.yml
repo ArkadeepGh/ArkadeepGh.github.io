@@ -1,0 +1,42 @@
+# --- Site details -----------------------------------------------------------
+title: Arkadeep
+tagline: Notes on probability, statistics, and the mathematics underneath
+author: Arkadeep
+email: your.email@example.com
+description: >-
+  Working notes on probability, statistical inference, linear algebra, and the
+  problems I am chewing on as a statistics undergraduate.
+
+# IMPORTANT: set these two correctly.
+#  - If your repo is named  <username>.github.io  -> baseurl: ""
+#  - If your repo is named  blog (or anything else) -> baseurl: "/blog"
+baseurl: ""
+url: "https://YOUR-USERNAME.github.io"
+
+# --- Links shown in the footer ----------------------------------------------
+github_username: YOUR-USERNAME
+
+# --- Build settings ---------------------------------------------------------
+markdown: kramdown
+permalink: /:year/:month/:title/
+paginate: false
+
+kramdown:
+  math_engine: mathjax          # leaves $$...$$ alone so MathJax renders it
+  syntax_highlighter: rouge
+  input: GFM
+  hard_wrap: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      math: true
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

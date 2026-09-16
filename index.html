@@ -1,0 +1,28 @@
+---
+layout: default
+title: null
+---
+<section class="intro">
+  <h1>{{ site.tagline }}</h1>
+  <p>I am a statistics undergraduate at Presidency University, Kolkata. This is where I write things down properly — mostly proofs I found surprising, and results I only understood after rederiving them.</p>
+
+  <svg class="curve" viewBox="0 0 600 46" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path class="fill" d="M0,46 C120,46 170,44 220,30 C255,20 275,2 300,2 C325,2 345,20 380,30 C430,44 480,46 600,46 Z"/>
+    <path class="line" d="M0,46 C120,46 170,44 220,30 C255,20 275,2 300,2 C325,2 345,20 380,30 C430,44 480,46 600,46"/>
+    <line x1="0" y1="45.5" x2="600" y2="45.5"/>
+  </svg>
+</section>
+
+{% if site.posts.size > 0 %}
+<ul class="archive">
+  {% for post in site.posts %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p>{{ post.excerpt | strip_html | truncate: 165 }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Nothing published yet. The first post goes in <code>_posts/</code>.</p>
+{% endif %}
