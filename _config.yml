@@ -2,7 +2,7 @@
 title: Arkadeep
 tagline: Notes on probability, statistics, and the mathematics underneath
 author: Arkadeep
-email: your.email@example.com
+email: arkadeepghosh399@gmail.com
 description: >-
   Working notes on probability, statistical inference, linear algebra, and the
   problems I am chewing on as a statistics undergraduate.
@@ -11,10 +11,10 @@ description: >-
 #  - If your repo is named  <username>.github.io  -> baseurl: ""
 #  - If your repo is named  blog (or anything else) -> baseurl: "/blog"
 baseurl: ""
-url: "https://YOUR-USERNAME.github.io"
+url: "https://ArkadeepGh.github.io"
 
 # --- Links shown in the footer ----------------------------------------------
-github_username: YOUR-USERNAME
+github_username: ArkadeepGh
 
 # --- Build settings ---------------------------------------------------------
 markdown: kramdown
