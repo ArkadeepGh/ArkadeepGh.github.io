@@ -19,7 +19,7 @@ github_username: ArkadeepGh
 # --- Build settings ---------------------------------------------------------
 markdown: kramdown
 permalink: /:year/:month/:title/
-paginate: false
+
 
 kramdown:
   math_engine: mathjax          # leaves $$...$$ alone so MathJax renders it
