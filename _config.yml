@@ -6,7 +6,7 @@ email: arkadeepghosh399@gmail.com
 description: >-
   Working notes on probability, statistical inference, linear algebra, and the
   problems I am chewing on as a statistics undergraduate.
-
+theme: null
 # IMPORTANT: set these two correctly.
 #  - If your repo is named  <username>.github.io  -> baseurl: ""
 #  - If your repo is named  blog (or anything else) -> baseurl: "/blog"
