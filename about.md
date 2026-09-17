@@ -5,7 +5,7 @@ permalink: /about/
 math: true
 ---
 
-<article class="post">
+<article class="post" markdown="1">
 <header class="post-head">
   <h1>About</h1>
 </header>
