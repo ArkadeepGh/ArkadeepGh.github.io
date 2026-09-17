@@ -10,7 +10,7 @@ math: true
   <h1>About</h1>
 </header>
 
-Hi! I am Arkadeep Ghosh, currently an undergraduate student in the [Department of Statistics](https://www.presiuniv.ac.in/web/statistics.php) at [Presidency University, Kolkata](https://www.presiuniv.ac.in/web/index.php).
+Hi! I am Arkadeep Ghosh, currently an undergraduate student in the [Department of Statistics](https://www.presiuniv.ac.in/web/statistics.php) at [Presidency University](https://www.presiuniv.ac.in/web/index.php),Kolkata.
 I am a statistics and probability enthusiast, with interests in certain topics in Mathematics like Number Theory and Combinatorics.
 
 
