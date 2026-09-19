@@ -139,8 +139,8 @@ main {
   margin: 2rem 0 0;
   overflow: visible;
 }
-.curve path.fill { fill: var(--mark); }
-.curve path.line { fill: none; stroke: var(--rule); stroke-width: 1.25; }
+.curve path.fill { fill: none; }
+.curve path.line { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0.55; }
 .curve line      { stroke: var(--rule); stroke-width: 1; }
 
 /* =========================================================================
